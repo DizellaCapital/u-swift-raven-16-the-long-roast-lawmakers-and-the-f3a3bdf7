@@ -41,6 +41,8 @@ def check_sentence(text):
         fail("text is not exactly one sentence")
     if "PDF" not in text:
         fail("sentence does not mention the file format")
+    if not any(word in text for word in ("AI", "crypto", "internet")):
+        fail("sentence does not name what the lawmaker wants to regulate")
 
 
 def main():
